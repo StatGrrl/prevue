@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Pre-vue map and contact form.">
+	<meta name="keywords" content="contact, pretoria, gauteng">
+	<meta name="author" content="Lisa Kirkland">
+	<title>PRE-VUE | Contact Us</title>
+	<link rel="icon" href="favicon.png" type="image/png">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,700">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,700">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+	<header>
+		<nav id="header-nav" class="navbar navbar-expand-md navbar-light fixed-top p-0">
+			<!-- logo -->
+			<a class="navbar-brand m-sm-0 p-sm-2 pt-4" href="index.html">
+				<img src="header.png" width="400px" height="150px" alt="Logo" class="align-top d-none d-sm-block">
+				<img src="header.png" width="267px" height="100px" alt="Logo" class="d-block d-sm-none">
+			</a>
+			<!-- dropdown button for mobile -->
+			<button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#collapsible-nav">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- icon menu list-->
+			<div id="collapsible-nav" class="collapse navbar-collapse">
+				<ul id="nav-list" class="navbar-nav ml-auto">
+					<li class="nav-item"> 
+						<a class="nav-link" href="index.html">
+							<i class="fas fa-info-circle"></i>
+							<br/>About</a>
+					</li>
+					<li class="nav-item"> 
+						<a class="nav-link" href="funds.html">
+							<i class="fas fa-file"></i>
+							<br/>Funds</a>
+					</li>
+					<li class="nav-item"> 
+						<a class="nav-link" href="admin.html">
+							<i class="fas fa-inbox"></i>
+							<br/>Admin</a>
+					</li>
+					<li class="nav-item"> 
+						<a class="nav-link" href="books.html">
+							<i class="fas fa-book-open"></i>
+							<br/>Books</a>
+					</li>
+					<li class="nav-item"> 
+						<a class="nav-link" href="it.html">
+							<i class="fas fa-laptop"></i>
+							<br>IT</a>
+					</li>
+					<li class="nav-item"> 
+						<a class="nav-link" href="contact.html">
+							<i class="fas fa-envelope"></i>
+							<br>Contact</a>
+					</li>
+				</ul><!-- #nav-list -->
+			</div><!-- #collapsible-nav -->
+		</nav> <!-- #header-nav -->
+	</header>
+
+
+	<div id="contact-content" class="container-fluid">
+		<div class="topspace"></div>
+		<div id="contact-tiles" class="row justify-content-center content1" style="font-weight: 500">
+			<div class="col-lg-12">
+				<h1 class="font-weight-bold">Contact Us</h1>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-12">
+				<div id="contact-info" style="font-weight: 500">
+					<div><span class="font-italic">Tel:</span><a href="tel:+27861114662"> +27 86 111 4662</a></div>
+					<div><span class="font-italic">Fax:</span><span> +27 86 692 4245</span></div>
+					<div><span class="font-italic">Email:</span><a href="mailto:info@prevue.co.za"> info@prevue.co.za</a></div>
+					<div class="font-italic">Physical address:</div>
+					<p>Unit B3</p>
+					<p>The Willows Office Park</p>
+					<p>559 Farm Road</p>
+					<p>Die Wilgers, 0184</p>
+					<div class="font-italic">Postal address:</div>
+					<p>PO Box 72117</p>
+					<p>Lynnwood Ridge, 0040</p>
+				</div>
+				<hr class="d-sm-none">
+			</div>
+			<div id="hours-cont" class="col-12 d-block d-sm-none">
+				<span>Hours:</span>
+				<br>Mon-Thurs: 7:30am - 4:30pm
+				<br>Fri: 8:00am - 1:00pm
+				<br>Sat, Sun: Closed
+				<hr class="d-sm-none">
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-12">
+				<div id="contact-form" class="container">
+					<br class="d-block d-sm-none">
+					<form name="contactform" style="font-weight: 600" method="post" action="send_form_email.php">
+						<label for="first_name">First Name *</label>
+						<br/>
+						<input type="text" id="first_name" name="first_name" placeholder="Your name..">
+						<br/>
+						<label for="last_name">Last Name *</label>
+						<br/>
+						<input type="text" id="last_name" name="last_name" placeholder="Your last name..">
+						<br/>
+						<label for="email">Email Address *</label>
+						<br/>
+						<input type="text" id="email" name="email" placeholder="Your email address..">
+						<br/>
+						<label for="telephone">Telephone Number</label>
+						<br/>
+						<input type="text" id="telephone" name="telephone" placeholder="Your phone number..">
+						<br/>
+						<label for="comments">Message *</label>
+						<br/>
+						<textarea id="comments" name="comments" placeholder="Your message.." style="height:150px"></textarea>
+						<br/>
+						<input type="submit" value="Submit">
+					</form>
+				</div>		
+				<hr class="d-sm-none">
+			</div>
+			<div class="col-sm-6 col-xs-12">
+				<br class="d-block d-sm-block d-md-none">
+				<div id="map-tile" class="map-responsive">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.174103241032!2d28.319088615416497!3d-25.76481228363536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e955f74d2b822bd%3A0x856f3a848edf7ae9!2sThe+Willows+Office+Park!5e0!3m2!1sen!2sza!4v1547996088496" width="600" height="400" style="border:0" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+		<div class="bottomspace"></div>
+	</div> <!-- .container -->
+		
+	<footer class="panel-footer">
+		<div class="container-fluid">
+			<hr/>
+      		<div class="row">
+        		<div id="hours" class="col-sm-4 d-none d-sm-block">
+          			<span>Hours:</span>
+					<br>Mon-Thurs: 7:30am - 4:30pm
+					<br>Fri: 8:00am - 1:00pm
+					<br>Sat, Sun: Closed
+					<hr class="d-sm-none">
+        		</div>
+        		<div id="contact-links" class="col-sm-4">
+					<a href="tel:+27861114662">
+						<i class="fas fa-phone"></i></a>
+					<a href="mailto:info@prevue.co.za">
+						<i class="fas fa-envelope"></i></a>		
+					<a href="https://www.facebook.com/prevuegroup">
+						<i class="fab fa-facebook"></i></a>
+					<a href="https://twitter.com/PrevueGroup">
+						<i class="fab fa-twitter"></i></a>
+					<br/>
+					<span><a href="contact.html">Contact Us</a></span>
+				</div>
+        		<div id="address" class="col-sm-4 d-none d-sm-block">
+          			<span>Address:</span>
+					<br>Unit B3, The Willows Office Park
+					<br>559 Farm Road, Die Wilgers
+					<br>0184
+        		</div>
+      		</div>
+    	</div>
+	</footer>	
+
+	<script src="script.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
