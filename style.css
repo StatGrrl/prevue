@@ -57,6 +57,7 @@ h3 {
 }
 .card img {
 	max-width: 250px;
+	padding: 10px;
 }
 .card-body {
 	text-align: left;
@@ -68,17 +69,19 @@ h3 {
 }
 .btn {
 	background-color: rgba(129,129,129,1.00); /* dark grey */
-	border-color: rgba(129,129,129,1.00); /* dark grey */
+	border-style: none;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .card-body a {
 	color: rgba(240,240,240,1.00);
 	text-decoration: none;
 	font-size: 0.6em;
+	border-style: none;
 }
 .card-body a:hover {
 	background-color: rgba(0,23,71,1.0); /* navy */
 	text-decoration: none;
+	border-style: none;
 }
 
 /* END GLOBAL */
