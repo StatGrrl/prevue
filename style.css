@@ -6,14 +6,13 @@ body {
 	background-image: url("background.png");
 	background-color: rgba(0,23,71,1.0); /* navy */
 	font-family: 'Montserrat', sans-serif;
-	font-size: 18px;
+	font-size: 14px;
 	color: 1px 1px 1px rgba(129,129,129,1.00); /* dark grey */
-	text-align: center;
 	padding-top: 200px;
 	padding-bottom: 150px;
 }
 h1 {
-	font-family: 'Merriweather', serif;
+	font-family: 'Montserrat', sans-serif;
 	color: rgba(0,23,71,1.00); /* navy */
 	font-size: 36px;
 	text-shadow: 1px 1px 1px rgba(129,129,129,1.00); /* dark grey */
@@ -22,13 +21,13 @@ h1 {
 	font-weight: bold;
 }
 h2 {
-	font-family: 'Merriweather', serif;
+	font-family: 'Montserrat', sans-serif;
 	color: rgba(240,240,240,1.00);
 	font-size: 26px;
 	font-weight: bold;
 }
 h3 {
-	font-family: 'Merriweather', serif;
+	font-family: 'Montserrat', sans-serif;
 	color: rgba(240,240,240,1.00);
 	font-size: 18px;
 	font-weight: bold;
@@ -103,6 +102,7 @@ h3 {
 }
 #nav-list {
 	position: absolute;
+	text-align: center;
 	right: 0px;
 	top: 10px;
 }
@@ -125,11 +125,12 @@ h3 {
 	width: 100%;
 	background-color: rgba(0,23,71,1.00); /*navy */
 	background-image: url("footer-background.png");
-	font-size: 0.75em;
+	/* font-size: 0.75em; */
 	padding: 0px;
 	font-weight: 400;
 	color: rgba(129,129,129,1.00); /* dark grey */
 	margin-top: 10px;
+	text-align: center;
 }
 #hours > span, #address > span {
 	font-style: italic;
@@ -336,11 +337,14 @@ h3 {
 		display: none;	
 	}
 	#contact-links a {
-		font-size: 1.9em;
+		font-size: 1.4em;
 	}
 	#contact-links span {
 		font-size: 1em;
 		line-height: 2.5;
+	}
+	#hours, #address {
+		font-size: 0.7em;
 	}
 	.card {
 		margin: 0 5px;
