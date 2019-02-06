@@ -2,7 +2,7 @@
 if(isset($_POST['email'])) {
  
     // EDIT THE 2 LINES BELOW AS REQUIRED
-    $email_to = "info@prevue.co.za";
+    $email_to = "lisa@prevue.co.za";
     $email_subject = "PRE-VUE Online Contact Form";
  
     $first_name = $_POST['first_name']; // required
