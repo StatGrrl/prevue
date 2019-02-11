@@ -8,6 +8,7 @@
 * centered contact form
 * added carousel to home page 
 * added contact cards for individuals on funds, admin, books and it pages
+  * changed look of contact cards and added job title
 
 
 ## Fixes
@@ -25,5 +26,4 @@
 * Reviews from clients on homepage
 * Logo links to partner companies and/or clients on homepage (EOHCB, NBC, Verso, Shalom, photographer, graphic designer, etc)
 * Property, wellness, academy pages - need content
-* Add job title in contact cards
-* Card deck on homepage for each branch, alternating colors (https://www.w3schools.com/bootstrap4/bootstrap_cards.asp)
+
