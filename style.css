@@ -287,10 +287,6 @@ h3 {
 	.card {
 		margin: 0 10px;
 	}
-	.card-title {
-		font-size: 0.75em;
-		line-height: 0.5;
-	}
 	#contact-links a {
 		font-size: 1.9em;
 	}
@@ -425,13 +421,6 @@ h3 {
 	}
 	.card {
 		margin: 0 10px;
-	}
-	.card-title {
-		font-size: 0.65em;
-		line-height: 0.5;
-	}
-	.card a {
-		font-size: 0.4em;
 	}
 }
 
