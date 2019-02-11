@@ -63,6 +63,9 @@ h3 {
 	font-size: 0.7em;
 	line-height: 0.5;
 }
+.card-title {
+	font-size: 0.7em;
+}
 .card-footer {
 	padding: 0;
 }
