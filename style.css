@@ -80,7 +80,7 @@ h3 {
 	font-size: 0.6em;
 	border-style: none;
 }
-.card-footer a {
+.card-footer a:hover {
 	background-color: rgba(0,23,71,1.0); /* navy */
 	color: rgba(240,240,240,1.00);
 	text-decoration: none;
