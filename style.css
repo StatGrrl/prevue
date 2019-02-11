@@ -72,6 +72,7 @@ h3 {
 	background-color: rgba(129,129,129,1.00); /* dark grey */
 	border-style: none;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 0 
 }
 .card-body a {
 	color: rgba(240,240,240,1.00);
