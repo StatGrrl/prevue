@@ -18,3 +18,12 @@
 * Removed font-weight references to make text cleaner
 * Left-aligned paragraph text for readability
 * Decreased font size for copy
+
+## Ideas for brainstorming
+
+* Photoshoot for pics
+* Reviews from clients on homepage
+* Logo links to partner companies and/or clients on homepage (EOHCB, NBC, Verso, Shalom, photographer, graphic designer, etc)
+* Property, wellness, academy pages - need content
+* Add job title in contact cards
+* Card deck on homepage for each branch, alternating colors (https://www.w3schools.com/bootstrap4/bootstrap_cards.asp)
