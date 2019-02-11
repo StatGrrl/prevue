@@ -60,7 +60,6 @@ h3 {
 .card-body {
 	text-align: left;
 	color: rgba(129,129,129,1.00); /* dark grey */
-	font-size: 0.8em;
 	line-height: 0.5;
 }
 .card-body h4 {
