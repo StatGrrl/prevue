@@ -59,8 +59,6 @@ h3 {
 }
 .card-body {
 	text-align: left;
-}
-.card-title {
 	color: rgba(129,129,129,1.00); /* dark grey */
 	font-size: 1em;
 	line-height: 0.5;
