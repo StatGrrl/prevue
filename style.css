@@ -74,13 +74,13 @@ h3 {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	border-radius: 0 
 }
-.card-body a {
+.card-footer a {
 	color: rgba(240,240,240,1.00);
 	text-decoration: none;
 	font-size: 0.6em;
 	border-style: none;
 }
-.card-body a:hover {
+.btn:hover {
 	background-color: rgba(0,23,71,1.0); /* navy */
 	text-decoration: none;
 	border-style: none;
