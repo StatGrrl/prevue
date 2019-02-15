@@ -32,6 +32,18 @@ h3 {
 	font-size: 18px;
 	font-weight: bold;
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 .midspace {
 	height: 40px;
 }
@@ -424,5 +436,9 @@ h3 {
 	.card {
 		margin: 0 10px;
 	}
+	.card-body h4 {
+		font-size: 1em;
+	}
+
 }
 
