@@ -2,13 +2,14 @@
 if(isset($_POST['email'])) {
  
     // EDIT THE 2 LINES BELOW AS REQUIRED
-    $email_to = "info@prevue.co.za";
+    $email_to = "lisa@prevue.co.za";
     $email_subject = "PRE-VUE Online Contact Form";
  
     $first_name = $_POST['first_name']; // required
     $last_name = $_POST['last_name']; // required
     $email_from = $_POST['email']; // required
     $telephone = $_POST['telephone']; // not required
+    $fax = $_POST['fax']; // not required
     $comments = $_POST['comments']; // required
  
     $error_message = "";
@@ -27,6 +28,14 @@ if(isset($_POST['email'])) {
   if(!preg_match($string_exp,$last_name)) {
     $error_message .= 'The Last Name you entered does not appear to be valid.<br />';
   }
+	
+	
+    $fax_exp = "";
+ 
+  if(!preg_match($fax_exp,$fax)) {
+    $error_message .= 'Form does not appear to be valid.<br />';
+  }
+ 
  
   if(strlen($comments) < 2) {
     $error_message .= 'The Comments you entered do not appear to be valid.<br />';
