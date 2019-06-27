@@ -251,6 +251,9 @@ h3 {
 	text-align: center;
 	font-size: 0.8em;
 }
+#fax {
+	display: none;
+}
 .map-responsive{
     overflow:hidden;
     padding-bottom:56.25%;
