@@ -138,12 +138,12 @@ h3 {
 
 /* FOOTER */
 .panel-footer {
-	/* position: fixed; 
+	position: fixed; 
 	left: 0;
-	bottom: 0; */
+	bottom: 0; 
 	width: 100%;
 	background-color: rgba(0,23,71,1.00); /*navy */
-	/* background-image: url("footer-background.png"); */
+	background-image: url("footer-background.png"); 
 	/* font-size: 0.75em; */
 	padding: 10px;
 	font-weight: 400;
