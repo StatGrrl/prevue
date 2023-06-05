@@ -1,13 +1,89 @@
-<!doctype html>
+<?php
+if(isset($_POST['email'])) {
+ 
+    // EDIT THE 2 LINES BELOW AS REQUIRED
+    $email_to = "lisa@prevue.co.za";
+    $email_subject = "PRE-VUE Online Contact Form";
+ 
+    $first_name = $_POST['first_name']; // required
+    $last_name = $_POST['last_name']; // required
+    $email_from = $_POST['email']; // required
+    $telephone = $_POST['telephone']; // not required
+    $comments = $_POST['comments']; // required
+ 
+	$error_message = "";
+
+	$email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+ 
+	if(!preg_match($email_exp,$email_from)) {
+		$error_message .= 'The Email Address you entered does not appear to be valid.<br />';
+	}
+/*	
+	if(isset($_POST['g-recaptcha-response'])){
+		$captcha=$_POST['g-recaptcha-response'];
+	}
+	else
+		$captcha = false;
+
+	if(!$captcha){
+		$error_message .= 'Recaptcha response error.<br />';
+	}
+	else{
+		$secret = '6Lf8prYUAAAAACG05VsU46JbGG5ZLFTxB9kdLjjb';
+		$response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secret."&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
+		if($response.success==false)
+		{
+			$error_message .= 'Recaptcha success error.<br />';
+		}
+	}
+*/
+    $string_exp = "/^[A-Za-z .'-]+$/";
+	
+	if(!preg_match($string_exp,$first_name)) {
+		$error_message .= 'The First Name you entered does not appear to be valid.<br />';
+	}
+	
+	if(!preg_match($string_exp,$last_name)) {
+		$error_message .= 'The Last Name you entered does not appear to be valid.<br />';
+	}
+	
+	if(strlen($comments) < 2) {
+		$error_message .= 'The Comments you entered do not appear to be valid.<br />';
+	}
+		
+	function clean_string($string) {
+		$bad = array("content-type","bcc:","to:","cc:","href");
+		return str_replace($bad,"",$string);
+	}
+
+		
+	$email_message = "Form details below.\n\n";
+	$email_message .= "First Name: ".clean_string($first_name)."\n";
+	$email_message .= "Last Name: ".clean_string($last_name)."\n";
+	$email_message .= "Email: ".clean_string($email_from)."\n";
+	$email_message .= "Telephone: ".clean_string($telephone)."\n";
+	$email_message .= "Comments: ".clean_string($comments)."\n";
+
+	// create email headers
+	$headers = 'From: '.$email_from."\r\n".
+	'Reply-To: '.$email_from."\r\n" .
+	'X-Mailer: PHP/' . phpversion();
+
+	if(! strlen($error_message) > 0) { 
+	@mail($email_to, $email_subject, $email_message, $headers);  
+}
+?>
+ 
+<!-- include your own success html here -->
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Pre-vue offers IT sales, support and services such as upgrades, installations and configurations.">
-	<meta name="keywords" content="IT, computer, hardware, software, support, sales, services, pretoria, gauteng">
+	<meta name="description" content="Pre-vue map and contact form.">
+	<meta name="keywords" content="contact, pretoria, gauteng">
 	<meta name="author" content="Lisa Kirkland">
-	<title>PRE-VUE | IT Services, Equipment &amp; Support</title>
+	<title>PRE-VUE | Contact Us</title>
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@PrevueGroup" />
 	<meta name="twitter:creator" content="@RiotGrrlLisa" />
@@ -123,50 +199,87 @@
 		</nav> <!-- #header-nav -->
 	</header>
 
-	
-	<div id="it-content" class="container-fluid">
+
+	<div id="contact-content" class="container-fluid">
+
 		<div class="row midspace"></div>
-		<div id="it-main" class="row content1"  >
-<!--			<div class="col-md-6">
-				<div class="container">
-					<div class="card-columns d-flex justify-content-center">
-						<div class="card">
-							<img src="img2.jpg" class="card-img-top img-fluid">
-							<div class="card-body">
-								<h4 class="card-title font-weight-bold">Clive</h4>
-								<a class="btn btn-primary font-weight-bold" href="mailto:clive@prevue.co.za">Contact</a>
-							</div>
-						</div>
-					</div>
+		<div id="contact-tiles" class="row justify-content-center content1"  >
+			<div class="col-lg-12">
+				<h1 class="font-weight-bold">Contact Us</h1>
+			</div>
+			<div class="col-lg-4 col-sm-7 col-xs-12">
+				<div id="contact-info"  >
+					<div><span class="font-italic">Tel:</span><a href="tel:+27861114662"> +27 86 111 4662</a></div>
+					<div><span class="font-italic">Whatsapp Pre-vue:</span> +27 76 638 7235</div>
+					<div><span class="font-italic">Whatsapp HBSI Pension:</span> +27 72 858 9786</div>
+					<div><span class="font-italic">Email:</span><a href="mailto:info@prevue.co.za"> info@prevue.co.za</a></div>
+					<div class="font-italic">Physical address:</div>
+					<p>Unit B3</p>
+					<p>The Willows Office Park</p>
+					<p>559 Farm Road</p>
+					<p>Die Wilgers, 0184</p>
+					<div class="font-italic">Postal address:</div>
+					<p>PO Box 72117</p>
+					<p>Lynnwood Ridge, 0040</p>
 				</div>
 				<hr class="d-md-none">
-			</div>
--->			
-			<div class="col">
-				<h1 class="font-weight-bold">IT Services, Equipment &amp; Support</h1>
-				<p>PRE-VUE provides hardware and software, repairs, upgrades, installations and configurations , as well as on-site or remote support, to home users and small businesses.</p>
+			
+			<div id="hours-cont" class="d-block d-sm-block d-md-none">
+				<span>Hours:</span>
+				<br>Mon-Thurs: 08:30 - 16:00
+				<br>Fri: 08:30 - 13:00
+			<br>Sat, Sun: Closed
+				<hr class="d-sm-none">
 			</div>
 		</div>
-		<div class="midspace"></div>
-		<div class="row content2">
-			<div class="col-md-9">
-				<div id="it-info" class="list">
-				<p> Our services include: </p>
-					<ul>
-						<li>Hardware and software, repairs, upgrades, installations and configurations</li>
-						<li>On-site support in Pretoria, Centurion and Midrand, as well as remote support</li>
-						<li>Expertise to provide the correct specification hardware for your software requirements and usage environment</li>
-						<li>Significant computer and notebook speed improvements via SSD hard drive upgrades</li>
-						<li>PRE-VUE is an ESET antivirus and anti malware software partner and supplier</li>
-					</ul>
+			<div class="col-lg-3 col-sm-5 col-xs-12">
+				<div id="contact-form" class="container">
+					<br class="d-block d-sm-none">
+					<form name="contactform" style="font-weight: 600" method="POST" action="form_mailer.php">
+						<label style="text-align: left" for="first_name">First Name *</label>
+						<br/>
+						<input type="text" id="first_name" name="first_name"  required>
+						<br/>
+						<label for="last_name" style="margin-top: 0.5rem">Last Name *</label>
+						<br/>
+						<input type="text" id="last_name" name="last_name"  required>
+						<br/>
+						<label for="email" style="margin-top: 0.5rem">Email Address *</label>
+						<br/>
+						<input type="email" id="email" name="email" required>
+						<br/>
+						<label for="telephone" style="margin-top: 0.5rem">Telephone Number</label>
+						<br/>
+						<input type="text" id="telephone" name="telephone" >
+						<br/>
+						<label for="comments" style="margin-top: 0.5rem">Message *</label>
+						<br/>
+						<textarea id="comments" name="comments" style="height:100px;" required></textarea>
+						<br/>
+						<input type="submit" value="Submit">
+					</form>
+				</div>		
+
+          <?php
+            if(strlen($error_message) > 0) { 
+          ?>
+            <div class="alert alert-success"><strong>Please double check your info: <br /></strong><?php echo $error_message; ?></div>
+          <?php 
+            }
+          ?>
+		  <div class="alert alert-success"><strong>Thank you!</strong> We will be in touch with you shortly.</div>
+		  
+		  <hr class="d-sm-none">
+			</div>
+			<div class="col-lg-5 col-md-12">
+				<br class="d-block d-sm-block d-lg-none">
+				<div id="map-tile" class="map-responsive">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1796.58515549752!2d28.320745927401287!3d-25.764937568115492!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e955e38dd5894d5%3A0x2fed84911895ca9d!2sPre-Vue+Accounting+Services+and+IT!5e0!3m2!1sen!2sza!4v1548408277702" width="600" height="450" style="border:0" allowfullscreen></iframe>
 				</div>
-				<br class="d-block d-md-none"/>	
 			</div>
-<!-- PROMO CODE			<div id="promo-it" class="col-md-3 text-center">
-				<img src="promo_it.png" alt="Promo">
-				<p>Use this promo to get a 10% discount on your first invoice</p>
-			</div> -->
 		</div>
+		<div class="row midspace"></div>
+
 	</div> <!-- .container -->
 		
 	<footer class="panel-footer">
@@ -201,15 +314,14 @@
     	</div>
 	</footer>	
 
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 	<script src="https://platform.twitter.com/widgets.js"></script>
-<!--	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
-	<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-	<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
--->
-	
 </body>
 </html>
+
+<?php
+ 
+}
+?>

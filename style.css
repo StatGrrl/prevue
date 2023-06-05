@@ -2,15 +2,24 @@
 /* CSS Document */
 
 /* GLOBAL */
+
 body {
-	background-image: url("background.png");
+	background-image: url("images/background.png");
 	background-color: rgba(0,23,71,1.0); /* navy */
 	font-family: 'Montserrat', sans-serif;
 	font-size: 14px;
 	color: 1px 1px 1px rgba(129,129,129,1.00); /* dark grey */
-	padding-top: 200px;
-	padding-bottom: 150px;
+	/* padding-top: 20px;
+	padding-bottom: 150px; */
+	min-height: 100vh;
+	margin: 0;
+	position: relative;
 }
+body::after {
+	content: '';
+	display: block;
+	height: 150px; /* Set same as footer's height */
+  }
 h1 {
 	font-family: 'Montserrat', sans-serif;
 	color: rgba(0,23,71,1.00); /* navy */
@@ -58,6 +67,15 @@ h3 {
 .content2 {
 	color: rgba(240,240,240,1.00);
 }
+.content2 a {
+	color: rgba(240,240,240,1.00);
+	text-decoration: underline;
+}
+.content2 a:hover {
+	color: rgba(240,240,240,1.00);
+	text-decoration: underline;
+}
+
 .list {
 	text-align: left;
 }
@@ -104,26 +122,35 @@ h3 {
 /* END GLOBAL */
 
 /* HEADER */
+header {
+	min-height: 80px;
+}
 #header-nav {
 	border-radius: 0;
-	border: 0;
-	background-image: url("header-background.png"); 
-	background-color: rgba(0,23,71,1.0); /* navy */
-	background-repeat: repeat-x;
+	border: 0; 
+	background-color: white;
+}
+.navbar-brand {
+	margin: 0;
+	padding: 2px;
 }
 .navbar-brand a:hover, .navbar-brand a:focus {
 	text-decoration: none;
 }
 .navbar-toggler {
 	position: absolute;
-	right: 10px;
-	top: 20px;
+	right: 20px;
+	top: 15px;
+	background-color: white;
+	padding: 10px;
 }
 #nav-list {
 	position: absolute;
 	text-align: center;
-	right: 0px;
-	top: 10px;
+	right: 10px;
+	top: 5px;
+	background-color: white;
+	padding: 10px;
 }
 #nav-list a {
 	color: rgba(129,129,129,1.00); /* dark grey */
@@ -137,15 +164,15 @@ h3 {
 /* END HEADER */
 
 /* FOOTER */
-.panel-footer {
-	position: fixed; 
-	left: 0;
-	bottom: 0; 
+footer {
+	position: absolute;
+	bottom: 0;
 	width: 100%;
-	background-color: rgba(0,23,71,1.00); /*navy */
-	background-image: url("footer-background.png"); 
+	background-color: white;
 	/* font-size: 0.75em; */
-	padding: 10px;
+	height: 150px;
+	padding-bottom: 20px;
+
 	font-weight: 400;
 	color: rgba(129,129,129,1.00); /* dark grey */
 	margin-top: 10px;
@@ -155,18 +182,21 @@ h3 {
 	font-style: italic;
   	font-size: 1.25em;
 }
-#contact-links a {
+.contact-links a {
 	color: rgba(129,129,129,1.00); /* dark grey */
-	font-size: 3em;
+	font-size: 2em;
 	padding: 10px;
 }
-#contact-links a:hover {
+.contact-links a:hover {
 	background: rgba(0,23,71,1.00); /*navy */
 	color: white;
 	text-decoration: none;
 }
-#contact-links span {
-	font-size: 0.5em;
+#ft_contact {
+	font-size: 1.4em;
+}
+#ft_privacy {
+	font-size: 1em;
 }
 /* END FOOTER */
 
@@ -237,6 +267,9 @@ h3 {
 #contact-info {
 	text-align: right;
 }
+#hours-cont {
+	text-align: right;
+}
 #contact-info div {
 	padding-top: 10px;
 }
@@ -251,9 +284,6 @@ h3 {
 	text-align: center;
 	font-size: 0.8em;
 }
-/* #fax {
-	display: none;
-}*/
 .map-responsive{
     overflow:hidden;
     padding-bottom:56.25%;
@@ -319,13 +349,17 @@ h3 {
 	.card-footer {
 		font-size: 0.9em;
 	}
+	#nav-list {
+		position: absolute;
+		right: 0px;
+/*		top: 70px;*/
+		background-color: white;
+	}
 	#contact-links a {
 		font-size: 1.9em;
 	}
-	#contact-links span {
-		font-size: 0.8em;
-		line-height: 2.5;
-	}
+	
+	
 	#hours, #address {
 		font-size: 0.9em;
 	}
@@ -336,9 +370,9 @@ h3 {
 @media (min-width: 576px) and (max-width: 767px) {
 	body {
 		font-size: 0.85em;
-		padding-bottom: 220px;
+/*		padding-bottom: 220px;
 		padding-top: 160px;
-	}
+*/	}
 	h1 {
 		font-size: 24px;
 	}
@@ -348,19 +382,19 @@ h3 {
 	h3 {
 		font-size: 12px;
 	}
-	.navbar-toggler {
+/*	.navbar-toggler {
 		position: absolute;
 		right: 10px;
 		top: 30px;
-	}
+	}*/
 	#nav-list {
 		position: absolute;
 		right: 0px;
-		top: 70px;
+/*		top: 70px;*/
 		background-color: white;
 	}
 	#collapsible-nav a {
-		background-image: white;
+		background-color: white;
 		color: rgba(129,129,129,1.00); /* dark grey */
 		text-align: center;
 		font-size: 1.25em;
@@ -376,11 +410,13 @@ h3 {
 		display: none;	
 	}
 	#contact-links a {
+		font-size: 1em;
+	}
+	#ft_contact {
 		font-size: 1.4em;
 	}
-	#contact-links span {
+	#ft_privacy {
 		font-size: 1em;
-		line-height: 2.5;
 	}
 	#hours, #address {
 		font-size: 0.725em;
@@ -395,9 +431,9 @@ h3 {
 @media (max-width: 575px) {
 	body {
 		font-size: 0.85em;
-		padding-bottom: 200px;
+/*		padding-bottom: 200px;
 		padding-top: 130px;
-	}
+*/	}
 	h1 {
 		font-size: 24px;
 	}
@@ -413,14 +449,14 @@ h3 {
 	#nav-list {
 		position: absolute;
 		right: 0px;
-		top: 70px;
+/*		top: 70px;*/
 		background-color: white;
 	}
-	.navbar-toggler {
+/*	.navbar-toggler {
 		position: absolute;
 		right: 10px;
 		top: 30px;
-	}
+	}*/
 	#collapsible-nav a {
 		background-color: white;
 		color: rgba(129,129,129,1.00); /* dark grey */
@@ -437,16 +473,12 @@ h3 {
 		transition: none;
 		display: none;	
 	}
-	.panel-footer {
+/*	.panel-footer {
 		padding: 0;
 		margin: 0px;
-	}
+	} */
 	#contact-links a {
-		font-size: 1.8em;
-	}
-	#contact-links span {
-		font-size: 0.8em;
-		line-height: 2.25;
+		font-size: 1em;
 	}
 	#contact-tiles div {
 		text-align: center;
@@ -464,4 +496,3 @@ h3 {
 		font-size: 0.7em;
 	}
 }
-
