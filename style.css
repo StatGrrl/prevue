@@ -218,22 +218,19 @@ footer {
 /* END HOME PAGE */
 
 /* FUNDS PAGE */
-#faq {
+#forms {
 	text-align: left;
 }
-#faq a {
+#forms a {
 	color: rgba(240,240,240,1.00);
 	text-decoration-color: rgba(240,240,240,1.00);
 	text-decoration: underline;
-	font-weight: bold;
 }
-#faq a:hover {
+#forms a:hover {
 	color: white;
 	text-decoration-color: white;
 	text-decoration: underline;
-	font-weight: bold;
 }
-
 /* END FUNDS PAGE */
 
 /* ACCOUNTING PAGE */
